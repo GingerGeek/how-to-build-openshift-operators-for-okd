@@ -3,42 +3,10 @@ Installing Openshift Container Storage on OKD
 
 # Install the Required Operators
 
-> Install the Local Storage Operator
-
-```bash
-#TODO
-```
-
-> Install the OCS (OpenShift Container Storage) operator
-
-```bash
-oc create ns openshift-storage
-
-cat <<EOF | oc create -f -
-apiVersion: operators.coreos.com/v1
-kind: OperatorGroup
-metadata:
-  name: openshift-storage-operatorgroup
-  namespace: openshift-storage
-spec:
-  targetNamespaces:
-  - openshift-storage
-EOF
-
-cat <<EOF | oc create -f -
-apiVersion: operators.coreos.com/v1alpha1
-kind: CatalogSource
-metadata:
-  name: ocs-catalogsource
-  namespace: openshift-marketplace
-spec:
-  sourceType: grpc
-  image: quay.io/<IMAGE-NAMESPACE>/ocs-registry:4.6.0
-  displayName: OpenShift Container Storage
-  publisher: Red Hat
-EOF
-```
-Make sure to replace \<IMAGE-NAMESPACE>!
+1. [Build the LSO operator and import the catalog](building-lso.md).
+2. [Build the OCS operator and import the catalog](building-ocs.md).
+3. Install the LSO opeator from the marketplace on the OKD dashboard.
+4. Install the OCS operator from the marketplace on the OKD dashboard
 
 > ⏱️ Wait about 15 minutes before proceeding to the next step. OKD is asynchronously installing the required operators.
 

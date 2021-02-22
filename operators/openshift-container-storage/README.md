@@ -25,7 +25,7 @@ When not using cloud-backed storage (e.g EBS) you will need to install the Local
 |-|-|
 | [Building LSO](building-lso.md) | How to download the code repository and build the Local Storage Operator in preparation for installation |
 | [Building OCS](building-ocs.md) | How to download the code repository and build the OCS operators in preparation for installation |
-| [Installing LSO+OCS and intial setup](installing-ocs.md) | Once the operators are in an image registry, how to install them within your cluster and setup the storage services |
+| [Installing LSO+OCS and intial setup](setup-ocs.md) | Once the operators are in an image registry, how to install them within your cluster and setup the storage services |
 
 
 # Useful Resources
